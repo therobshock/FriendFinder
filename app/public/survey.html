@@ -191,6 +191,23 @@
 
         console.log(newFriend);
 
+        var allDifferences = [];
+
+        $.get("/api/friends", function(data) {
+            console.log(data);
+            for (var x in data) {
+                var totalDiff = 0;
+                for (var i = 0; i < data[x].scores.length; i++) {
+                    var diff = data[x].scores[i] - newFriend.scores[i];
+                    diff = Math.abs(diff);
+                    totalDiff = totalDiff + diff;
+                };
+                allDifferences.push(totalDiff);
+            };
+            console.log(allDifferences);
+        });
+
+
         $.post("/api/friends", newFriend)
             .then(function(data) {
                 console.log(data);
