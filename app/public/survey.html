@@ -189,12 +189,10 @@
             ]
         };
 
-        console.log(newFriend);
 
         var allDifferences = [];
 
         $.get("/api/friends", function(data) {
-            console.log(data);
             for (var x in data) {
                 var totalDiff = 0;
                 for (var i = 0; i < data[x].scores.length; i++) {
@@ -204,7 +202,15 @@
                 };
                 allDifferences.push(totalDiff);
             };
-            console.log(allDifferences);
+            var minDiff = Math.min(...allDifferences);
+            var friendMatch;
+
+            for (var j = 0; j < allDifferences.length; j++) {
+                if (allDifferences[j] === minDiff) {
+                    friendMatch = data[j];
+                }
+            };
+            console.log(friendMatch);
         });
 
 
