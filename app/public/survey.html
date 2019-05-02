@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <style>
+    img {
+        max-width: 400px;
+    }
+    </style>
   </head>
 <body>
     <div class="container">
@@ -151,13 +157,13 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">We Have A Match</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              ...
+              <div id="match-info"></div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -189,19 +195,22 @@
             ]
         };
 
-
         var allDifferences = [];
 
         $.get("/api/friends", function(data) {
             for (var x in data) {
+
                 var totalDiff = 0;
+
                 for (var i = 0; i < data[x].scores.length; i++) {
+
                     var diff = data[x].scores[i] - newFriend.scores[i];
                     diff = Math.abs(diff);
                     totalDiff = totalDiff + diff;
                 };
                 allDifferences.push(totalDiff);
             };
+            
             var minDiff = Math.min(...allDifferences);
             var friendMatch;
 
@@ -211,6 +220,7 @@
                 }
             };
             console.log(friendMatch);
+            displayMatch(friendMatch);
         });
 
 
@@ -219,4 +229,16 @@
                 console.log(data);
             });
     });
+
+    function displayMatch(data) {
+            console.log(data.name);
+            var displayDiv = $("#match-info");
+            var heading = $("<h2>");
+            var name = data.name;
+            var photo = $("<img>").attr("src", data.photo);
+            
+            displayDiv.append(heading);
+            heading.append(name);
+            displayDiv.append(photo);
+        };
 </script>
