@@ -20,6 +20,7 @@
     <div class="container">
         <h2>Survey Questions</h2>
         <hr>
+
         <h3>
             <strong>About You</strong>
         </h3>
@@ -27,9 +28,10 @@
         <input type="text" id="name" class="form-control" required>
         <h4>Link to Photo (Required)</h4>
         <input type="text" id="photo" class="form-control" required>
+        
         <h3>
             <strong>Question 1</strong>
-            <h4>A Question</h4>
+            <h4>I'm more of a night owl.</h4>
         </h3>
             <select class="chosen-select" id="q1">
                 <option value></option>
@@ -39,10 +41,11 @@
                 <option value="4">4</option>
                 <option value="5">5 (Strongly Agree)</option>
             </select>
+
         <h3>
             <strong>Question 2</strong>
         </h3>
-        <h4>A Question</h4>
+        <h4>When it comes to movies, cinematics (action, directing, editing, photography, etc.) is more important than story.</h4>
         <select class="chosen-select" id="q2">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -51,10 +54,11 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
+
         <h3>
             <strong>Question 3</strong>
         </h3>
-        <h4>A Question</h4>
+        <h4>On my list of things I'd rather be doing, sex is near the top.</h4>
         <select class="chosen-select" id="q3">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -63,10 +67,11 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
+
         <h3>
             <strong>Question 4</strong>
         </h3>
-        <h4>A Question</h4>
+        <h4>The truth of value and meaning is that is only dirived through the perceptions of people.</h4>
         <select class="chosen-select" id="q4">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -75,10 +80,11 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
+        
         <h3>
             <strong>Question 5</strong>
         </h3>
-        <h4>A Question</h4>
+        <h4>Sure, we could order a pineapple pizza. We could also order a barrel of pig vomit.</h4>
         <select class="chosen-select" id="q5">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -87,10 +93,11 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
+        
         <h3>
             <strong>Question 6</strong>
         </h3>
-        <h4>A Question</h4>
+        <h4>I spend more time than I should on social media.</h4>
         <select class="chosen-select" id="q6">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -99,10 +106,11 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
+        
         <h3>
             <strong>Question 7</strong>
         </h3>
-        <h4>A Question</h4>
+        <h4>I'd rather stay in with one or two than be out with six or more.</h4>
         <select class="chosen-select" id="q7">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -111,10 +119,11 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
+        
         <h3>
             <strong>Question 8</strong>
         </h3>
-        <h4>A Question</h4>
+        <h4>I'm very promiscuous and I'm okay with that.</h4>
         <select class="chosen-select" id="q8">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -123,10 +132,11 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
+        
         <h3>
             <strong>Question 9</strong>
         </h3>
-        <h4>A Question</h4>
+        <h4>Society can be better understood through the structures of power rather than the values of culture.</h4>
         <select class="chosen-select" id="q9">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -135,10 +145,11 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
+        
         <h3>
             <strong>Question 10</strong>
         </h3>
-        <h4>A Question</h4>
+        <h4>Pluto is a planet.</h4>
         <select class="chosen-select" id="q10">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -147,17 +158,19 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
+        
         <br>
         <br>
         <button type="submit" id="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#results">Submit</button>
         <hr>
-    </div> 
+    </div>
+
     <!-- Modal -->
-    <div class="modal fade" id="results" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="results" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">We Have A Match</h5>
+              <h5 class="modal-title" id="ModalLabel">We Have A Match</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -210,7 +223,7 @@
                 };
                 allDifferences.push(totalDiff);
             };
-            
+
             var minDiff = Math.min(...allDifferences);
             var friendMatch;
 
@@ -231,7 +244,7 @@
     });
 
     function displayMatch(data) {
-            console.log(data.name);
+
             var displayDiv = $("#match-info");
             var heading = $("<h2>");
             var name = data.name;
